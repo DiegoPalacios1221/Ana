@@ -1,10 +1,15 @@
-public class PrecioTiquete {
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
 
         double precioBase = 1000000;
         double precioTiquete = 0;
 
-        int edad = 10;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese la edad de Ana: ");
+        int edad = scanner.nextInt();
 
         if (edad < 2) {
             System.out.println("Viajar está prohibido para niños menores de 2 años.");
@@ -15,11 +20,10 @@ public class PrecioTiquete {
             precioTiquete = precioBase * 0.5;  
         } else if (edad >= 11 && edad < 15) {
             precioTiquete = precioBase * 0.75;  
-        } else if (edad >= 15) {
+        } else {
             precioTiquete = precioBase;  
         }
 
-        
         System.out.println("El precio del tiquete para Ana es: $" + precioTiquete);
     }
 }
